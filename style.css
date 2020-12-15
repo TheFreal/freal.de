@@ -72,6 +72,7 @@ p {
     margin: 4px;
     font-family: 'Montserrat', sans-serif;
     color: white;
+    text-decoration: none;
 }
 
 .iconify {
