@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script>
+        window.onload = function () {
+            VANTA.HALO({
+                el: "#bg",
+                mouseControls: false,
+                touchControls: false,
+                gyroControls: false,
+                amplitudeFactor: 0.00,
+                yOffset: 0.13,
+                size: 0.50
+            })
+            let imgId = 0;
+            document.getElementById("face").addEventListener("click", () => {
+                document.getElementById("face").src = "/" + (++imgId % 4) + ".webp"
+            });
+        }
+
+    </script>
     <title>Leonard Wohlfarth</title>
 </head>
+
 <body>
     <div id="container">
+        <div id="bg">
+        </div>
         <div id="content">
-            <img src="/face.jpg" alt="My gorgeous face">
+            <img id="face" src="/0.webp" alt="My gorgeous face with various glasses">
             <h1>Leonard Wohlfarth</h1>
-            <h2>Designer/Developer - Stuttgart</h2>
+            <h2>Product Design • Developer</h2>
             <div id="items">
                 <a href="https://www.linkedin.com/in/leonard-wohlfarth/">
                     <div class="item">
@@ -22,14 +46,14 @@
                 </a>
                 <a href="http://portfolio.freal.de">
                     <div class="item">
-                        <span class="iconify" data-icon="mdi-projector-screen"></span>
+                        <span class="iconify" data-icon="mdi-file-pdf"></span>
                         <p>Portfolio</p>
                     </div>
                 </a>
                 <a href="mailto:leonard@wohlfarth.cool?subject=Hello%20there!">
                     <div class="item">
                         <span class="iconify" data-icon="mdi-envelope"></span>
-                        <p>Mail me</p>
+                        <p>Say hello</p>
                     </div>
                 </a>
             </div>
@@ -37,4 +61,5 @@
     </div>
     </div>
 </body>
+
 </html>
